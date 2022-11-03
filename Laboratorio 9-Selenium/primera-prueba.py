@@ -10,8 +10,10 @@ driver.maximize_window()
 driver.delete_all_cookies()
 driver.get("https://www.amazon.com/")
 search_input = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "twotabsearchtextbox")))
+time.sleep(3)
 search = ("HP Pavilon azul")
 search_input.send_keys(search)
+time.sleep(3)
 search_input.submit()
 element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div["
                                                                                     "1]/div[1]/div/span[1]/div["
@@ -20,14 +22,17 @@ element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPA
                                                                                     "/div[2]/div/div/div["
                                                                                     "1]/h2/a/span")))
 element.click()
+time.sleep(3)
 amount = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "quantity")))
 amount.send_keys("2")
+time.sleep(7)
 add_to_cart = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "add-to-cart-button")))
 add_to_cart.click()
+time.sleep(3)
 go_to_cart = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div["
                                                                                        "2]/div/div[1]/div[2]/div/div["
                                                                                        "1]/span/span/a")))
 go_to_cart.click()
 
-time.sleep(30)
+time.sleep(10)
 driver.quit()
