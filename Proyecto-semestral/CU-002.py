@@ -9,7 +9,7 @@ driver = webdriver.Chrome("C://Users//Joela//OneDrive//Escritorio//Codigo//Repos
                           "//Mantenimiento_Pruebas_Software//Package//chromedriver.exe")
 driver.maximize_window()
 driver.delete_all_cookies()
-driver.get("http://localhost/sitios/Proyecto-IngenieriaWeb/Inicio.php")
+driver.get("http://localhost/ingenieriaweb/Proyecto-IngenieriaWeb/Inicio.php")
 try:
     usuario = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/header/nav/ul/li[6]")))
     acceso = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/header/nav/ul/li[6]/ul/li[2]/a")))
